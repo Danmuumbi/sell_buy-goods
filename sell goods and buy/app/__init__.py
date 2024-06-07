@@ -14,9 +14,10 @@ def create_app():
     db.init_app(app)
     login_manager.init_app(app)
 
-    from app import routes, models
-
     with app.app_context():
         db.create_all()
+
+    from app.main import bp as main_bp
+    app.register_blueprint(main_bp)
 
     return app

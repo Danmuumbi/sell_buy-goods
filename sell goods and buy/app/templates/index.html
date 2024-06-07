@@ -5,7 +5,7 @@
     <ul>
         {% for good in goods %}
             <li>
-                <a href="{{ url_for('good', good_id=good.id) }}">{{ good.name }}</a>
+                <a href="{{ url_for('main.good', good_id=good.id) }}">{{ good.name }}</a>
                 - ${{ good.price }}
             </li>
         {% endfor %}

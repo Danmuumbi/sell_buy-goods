@@ -1,0 +1,20 @@
+your_project/
+├── app/
+│   ├── __init__.py
+│   ├── models.py
+│   ├── main/
+│   │   ├── __init__.py
+│   │   ├── routes.py
+│   ├── templates/
+│   │   ├── base.html
+│   │   ├── index.html
+│   │   ├── login.html
+│   │   ├── register.html
+│   │   ├── post_good.html
+│   │   ├── goods.html
+│   │   └── good_detail.html
+│   └── static/
+│       └── uploads/
+├── config.py
+├── run.py
+└── requirements.txt

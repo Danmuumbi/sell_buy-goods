@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, TextAreaField, FloatField
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField, FloatField,BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from app.models import User
 
@@ -20,10 +20,24 @@ class RegistrationForm(FlaskForm):
         if user:
             raise ValidationError('That email is already in use. Please choose a different one.')
 
-class LoginForm(FlaskForm):
+"""class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Login')
+
+
+    # app/main/forms.py
+
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms.validators import DataRequired, Email, EqualTo, Length"""
+
+class LoginForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('Sign In')
+
 
 class PostGoodForm(FlaskForm):
     name = StringField('Good Name', validators=[DataRequired()])

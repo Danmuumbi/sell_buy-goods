@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Post Good{% endblock %}
+{% block content %}
+    <h2>Post Good</h2>
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('main.post_good') }}">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=32) }}
+        </p>
+        <p>
+            {{ form.description.label }}<br>
+            {{ form.description(rows=4, cols=40) }}
+        </p>
+        <p>
+            {{ form.price.label }}<br>
+            {{ form.price(size=32) }}
+        </p>
+        <p>
+            <label for="image">Image</label><br>
+            <input type="file" name="image">
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <h1>Goods</h1>
+    <ul>
+        {% for good in goods %}
+            <li>
+                <a href="{{ url_for('good', good_id=good.id) }}">{{ good.name }}</a>
+                - ${{ good.price }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
